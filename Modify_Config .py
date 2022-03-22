@@ -28,14 +28,13 @@ for devices in devices_list:
     device_ip_type = devices.split(',')
     ip_address_of_device = device_ip_type[0]
     device_type  = device_ip_type[1]
-    #router_or_switch = device_ip_type[2]
     ios_device = {"device_type": device_type,
                   "ip": ip_address_of_device,
                   "username": username,
                   "password": password
                   }
     #check for errors
-    with open('log.txt', 'a') as f:   ###double check here for append and write
+    with open('log.txt', 'a') as f:   
         try:
             net_connect = ConnectHandler(**ios_device)
         except (AuthenticationException):
