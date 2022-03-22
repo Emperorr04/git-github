@@ -5,12 +5,13 @@ from netmiko.ssh_exception import NetmikoTimeoutException
 from paramiko.ssh_exception import SSHException
 from netmiko.ssh_exception import AuthenticationException
 
+#ensure input files are in correct directory
+os.chdir("D:\PP\Python")
+
 #accept credentials
 username = input("Enter your SSH username: ")
 password = getpass("input password: ")
 
-#ensure input files are in correct directory
-os.chdir("D:\PP\Python")
 
 #set of configs and device IPs
 with open("commands_file_cisco") as f:
